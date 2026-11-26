@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<script>
+/* Theme: saved choice first, else system preference (runs before paint to avoid a flash) */
+(function(){
+  var t = null;
+  try { t = localStorage.getItem('tbh-theme'); } catch (e) {}
+  if (t !== 'light' && t !== 'dark') t = (window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', t);
+})();
+</script>
+<title>Privacy Policy — Cancellation, Refund & Rescheduling | Along with Hasher Maktoum</title>
+<meta name="description" content="Cancellation, refund and rescheduling policy for private cultural tours with Hasher Maktoum in Abu Dhabi.">
+<!-- GitHub Pages project: /along-with-hasher-maktoum/ -->
+<link rel="icon" type="image/x-icon" sizes="16x16 32x32 48x48" href="/along-with-hasher-maktoum/favicon.ico">
+<link rel="icon" type="image/png" sizes="512x512" href="/along-with-hasher-maktoum/favicon.png">
+<link rel="apple-touch-icon" href="/along-with-hasher-maktoum/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Fonts: Antonio (display) · Sora (body) · Yellowtail (script wordmark) -->
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;600;700&family=Sora:wght@100;300;400;500;700&family=Yellowtail&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body data-page="policy">
+<a class="skip" href="#main">Skip to content</a>
+<div class="cursor" aria-hidden="true"><span></span></div>
+
+<header class="header" id="header">
+  <nav class="nav" aria-label="Primary">
+    <div class="nav__group nav__group--left">
+      <a class="nav__link u-link" data-nav="home" href="index.html">Home</a>
+      <a class="nav__link u-link" data-nav="meet-hasher" href="index.html#meet-hasher">Meet Hasher</a>
+      <a class="nav__link u-link" data-nav="destinations" href="index.html#destinations">Destinations</a>
+    </div>
+    <a class="logo" href="index.html" aria-label="Along with Hasher Maktoum, home"><span class="logo__caps" aria-hidden="true">Along&nbsp;with</span><span class="logo__script" aria-hidden="true">Hasher Maktoum</span></a>
+    <div class="nav__group nav__group--right">
+      <a class="nav__link u-link" data-nav="packages" href="index.html#packages">Packages</a>
+      <a class="nav__link u-link" data-nav="why" href="index.html#why">Why Hasher</a>
+      <a class="pill nav__book" href="book.html" data-nav-book>Book Now</a>
+      <button class="menu-btn" id="menuOpen" aria-expanded="false" aria-controls="menu"><span>Menu</span><span class="menu-btn__icon" aria-hidden="true"></span></button>
+    </div>
+  </nav>
+</header>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+  <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+  <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+</button>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site menu">
+  <div class="menu__top">
+    <a class="logo" href="index.html" aria-label="Along with Hasher Maktoum, home"><span class="logo__caps" aria-hidden="true">Along&nbsp;with</span><span class="logo__script" aria-hidden="true">Hasher Maktoum</span></a>
+    <button class="menu__close u-link" id="menuClose">Close</button>
+  </div>
+  <ul class="menu__list">
+    <li><a href="index.html"><span>Home</span></a></li>
+    <li><a href="index.html#meet-hasher"><span>Meet Hasher</span></a></li>
+    <li><a href="index.html#destinations"><span>Destinations</span></a></li>
+    <li><a href="index.html#packages"><span>Packages</span></a></li>
+    <li><a href="index.html#why"><span>Why Hasher</span></a></li>
+    <li><a href="book.html"><span>Book Now</span></a></li>
+  </ul>
+  <div class="menu__foot"><span>Abu Dhabi, UAE · Private cultural tours</span><a class="pill" href="book.html">Book a Private Tour</a></div>
+</div>
+
+<main id="main">
+<section class="section page-top" id="policy" aria-labelledby="policyTitle">
+  <div class="section-head">
+    <div>
+      <span class="section-index" data-fade>Privacy policy</span>
+      <h1 class="display h-lg" id="policyTitle"><span class="line"><span class="line__in">Cancellation, Refund</span></span><span class="line"><span class="line__in">&amp; Rescheduling Policy</span></span></h1>
+    </div>
+    <p class="lead" data-fade>We understand that travel plans can change. We aim to provide complete flexibility and peace of mind when booking your private experience.</p>
+  </div>
+  <div class="tabs" data-tabs data-fade>
+    <div class="tabs__list" role="tablist" aria-label="Policy sections"><button class="tabs__tab" role="tab" type="button" id="tab-cancellations" data-slug="cancellations" aria-controls="panel-cancellations" aria-selected="true" tabindex="0">Cancellations</button><button class="tabs__tab" role="tab" type="button" id="tab-multiple-outing-packages" data-slug="multiple-outing-packages" aria-controls="panel-multiple-outing-packages" aria-selected="false" tabindex="-1">Multiple-outing packages</button><button class="tabs__tab" role="tab" type="button" id="tab-rescheduling" data-slug="rescheduling" aria-controls="panel-rescheduling" aria-selected="false" tabindex="-1">Rescheduling</button><button class="tabs__tab" role="tab" type="button" id="tab-refund-processing" data-slug="refund-processing" aria-controls="panel-refund-processing" aria-selected="false" tabindex="-1">Refund processing</button><span class="tabs__ink" aria-hidden="true"></span></div>
+    
+    <section class="tabs__panel" role="tabpanel" id="panel-cancellations" aria-labelledby="tab-cancellations">
+      <div><span class="tabs__no">01 / 04</span><h2>Cancellations</h2></div>
+      <ul><li>Guests may cancel their booking at any time before the experience begins.</li><li>All cancellations are eligible for a 100% refund, regardless of notice.</li><li>No cancellation penalties or deductions will be applied.</li></ul>
+    </section>
+    <section class="tabs__panel" role="tabpanel" id="panel-multiple-outing-packages" aria-labelledby="tab-multiple-outing-packages" hidden>
+      <div><span class="tabs__no">02 / 04</span><h2>Multiple-outing packages</h2></div>
+      <ul><li>If a guest cancels before their first outing, the entire package is fully refundable.</li><li>If a package has already begun, any remaining, uncompleted outings will be refunded. Completed outings are not refundable.</li></ul>
+    </section>
+    <section class="tabs__panel" role="tabpanel" id="panel-rescheduling" aria-labelledby="tab-rescheduling" hidden>
+      <div><span class="tabs__no">03 / 04</span><h2>Rescheduling</h2></div>
+      <ul><li>Guests may request a date change at no additional charge.</li><li>Rescheduling is subject to availability and mutual agreement.</li></ul>
+    </section>
+    <section class="tabs__panel" role="tabpanel" id="panel-refund-processing" aria-labelledby="tab-refund-processing" hidden>
+      <div><span class="tabs__no">04 / 04</span><h2>Refund processing</h2></div>
+      <ul><li>Approved refunds will be initiated within seven business days.</li><li>Refunds will be returned through the original payment method where possible.</li></ul>
+    </section>
+  </div>
+</section>
+</main>
+
+<footer class="footer" id="contact">
+  <div class="footer__cols">
+    <div class="footer__col footer__brand">
+      <a class="logo" href="index.html" aria-label="Along with Hasher Maktoum, home"><span class="logo__caps" aria-hidden="true">Along&nbsp;with</span><span class="logo__script" aria-hidden="true">Hasher Maktoum</span></a>
+      <p>Private cultural outings to Abu Dhabi’s landmarks with your personal guide. Per-group pricing; optional activities quoted separately.</p>
+    </div>
+    <nav class="footer__col" aria-label="Quick links">
+      <h4>Quick links</h4>
+      <ul class="footer__links">
+        <li><a class="u-link" href="index.html">Home</a></li>
+        <li><a class="u-link" href="index.html#meet-hasher">Meet Hasher</a></li>
+        <li><a class="u-link" href="index.html#destinations">Destinations</a></li>
+        <li><a class="u-link" href="index.html#packages">Packages</a></li>
+        <li><a class="u-link" href="index.html#why">Why Hasher</a></li>
+        <li><a class="u-link" href="book.html">Book Now</a></li>
+      </ul>
+    </nav>
+    <div class="footer__col">
+      <h4>Contact</h4>
+      <dl class="contact">
+        <div><dt>Address</dt><dd>Abu Dhabi, UAE</dd></div>
+        <div><dt>Email</dt><dd><a class="u-link" href="mailto:hmaldhaheri@outlook.com">hmaldhaheri@outlook.com</a></dd></div>
+        <div><dt>Phone</dt><dd><a class="u-link" href="tel:+971503131393">+971 50 313 1393</a></dd></div>
+      </dl>
+      <div class="socials" aria-label="Social media">
+        <!-- LinkedIn: when Hasher sends his profile URL, replace this <button …> with
+             <a href="https://www.linkedin.com/in/…" target="_blank" rel="noopener" aria-label="Hasher Maktoum on LinkedIn"> (same <svg> inside) </a> -->
+        <button type="button" aria-label="LinkedIn (profile link coming soon)" data-toast="Hasher’s LinkedIn profile link is coming soon."><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></button>
+        <a href="https://wa.me/971503131393" target="_blank" rel="noopener" aria-label="WhatsApp Hasher"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer__bottom">
+    <span>© <span id="year"></span> Along with Hasher Maktoum. All rights reserved.</span>
+    <a class="u-link" href="privacy-policy.html">Privacy policy</a>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="./assets/site.js"></script>
+</body>
+</html>
