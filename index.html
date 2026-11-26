@@ -391,10 +391,13 @@ ul{list-style:none}
 .footer__col h4{font-weight:300;font-size:clamp(16px,1.3vw,20px);color:var(--c-text);margin-bottom:14px}
 .footer__col li,.footer__col p{font-size:16px;margin-bottom:8px}
 .footer__col .logo{align-items:flex-start;margin-bottom:16px}
-.footer__bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--c-text);font-weight:500;padding-top:24px;border-top:1px solid var(--c-line)}
-.footer__bottom nav{display:flex;gap:24px;flex-wrap:wrap}
+.footer__bottom{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--c-text);font-weight:500;padding-top:24px;border-top:1px solid var(--c-line)}
+.footer__bottom nav{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.footer__bottom nav button{font:inherit;color:inherit;line-height:inherit;padding:0;margin:0;background:none;border:0;cursor:pointer}
+.footer__bottom nav a,.footer__bottom nav button{display:inline-block;line-height:1.5}
 .socials{display:flex;gap:10px}
-.socials a,.socials button{width:42px;height:42px;border-radius:50%;border:1px solid var(--c-line);display:grid;place-items:center;color:#69727D;transition:color .3s,border-color .3s}
+.socials a,.socials button{width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.35);background:transparent;display:grid;place-items:center;color:#E6E6E6;padding:0;cursor:pointer;transition:color .3s,border-color .3s}
+.socials svg{display:block;width:20px;height:20px}
 .socials a:hover,.socials button:hover{color:#fff;border-color:#fff}
 
 /* ---------- Toast ---------- */
@@ -539,6 +542,7 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
 [data-theme="light"] .chip input:checked + label{background:#141414;color:#fff;border-color:#141414}
 [data-theme="light"] .choice input:checked + label{background:rgba(180,255,64,.18);border-color:var(--c-accent-ink)}
 [data-theme="light"] .footer__cta:hover{color:#141414}
+[data-theme="light"] .socials a,[data-theme="light"] .socials button{color:#141414;border-color:rgba(20,20,20,.35)}
 [data-theme="light"] .socials a:hover,[data-theme="light"] .socials button:hover{color:#141414;border-color:#141414}
 [data-theme="light"] .toast{background:#141414;color:#fff}
 [data-theme="light"] .cred,[data-theme="light"] .dest__more{border-color:rgba(0,0,0,.2)}
