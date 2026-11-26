@@ -394,8 +394,8 @@ ul{list-style:none}
 .footer__bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14px;color:var(--c-text);font-weight:500;padding-top:24px;border-top:1px solid var(--c-line)}
 .footer__bottom nav{display:flex;gap:24px;flex-wrap:wrap}
 .socials{display:flex;gap:10px}
-.socials a{width:42px;height:42px;border-radius:50%;border:1px solid var(--c-line);display:grid;place-items:center;color:#69727D;transition:color .3s,border-color .3s}
-.socials a:hover{color:#fff;border-color:#fff}
+.socials a,.socials button{width:42px;height:42px;border-radius:50%;border:1px solid var(--c-line);display:grid;place-items:center;color:#69727D;transition:color .3s,border-color .3s}
+.socials a:hover,.socials button:hover{color:#fff;border-color:#fff}
 
 /* ---------- Toast ---------- */
 .toast{position:fixed;left:50%;bottom:28px;z-index:400;transform:translate(-50%,160%);background:#fff;color:#000;padding:14px 20px;border-radius:999px;font-size:14px;max-width:calc(100vw - 32px);text-align:center;transition:transform .6s var(--ease);box-shadow:0 10px 40px rgba(0,0,0,.4)}
@@ -564,6 +564,75 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
 @media(max-width:760px){.destinations-select{display:grid;grid-template-columns:1fr}.card__price{max-width:100%}}
 /* Client photo depicts Sheikh Zayed Grand Mosque, not Founder’s Memorial */
 .dest__photo-note{display:block;font-size:12px;line-height:1.5;color:rgba(255,255,255,.85);margin-top:12px}
+
+
+/* =====================================================================
+   v2 — CURRENCY SWITCH
+   ===================================================================== */
+.cur{display:inline-flex;align-items:center;gap:4px;padding:4px;border-radius:999px;border:1px solid var(--c-line)}
+.cur__label{font-size:12px;color:var(--c-text);padding:0 8px 0 10px}
+.cur button{height:32px;min-width:48px;padding:0 12px;border-radius:999px;font-size:12.5px;font-weight:500;letter-spacing:.04em;color:var(--c-text);transition:background .3s,color .3s}
+.cur button:hover{color:var(--c-white)}
+.cur button[aria-pressed="true"]{background:var(--c-accent);color:#000}
+.cur-row{max-width:1180px;margin:0 auto clamp(28px,3vw,44px);display:flex;justify-content:space-between;align-items:center;gap:14px 24px;flex-wrap:wrap}
+.cur-note{font-size:12.5px;color:var(--c-text);font-weight:300;max-width:56ch}
+.summary .cur{margin-bottom:18px}
+
+/* =====================================================================
+   v2 — PER-GUEST PRICE LADDER (smaller numbers first, group total second)
+   ===================================================================== */
+.price{display:grid;gap:10px;width:100%}
+.price__from{font-size:13px;color:var(--c-text)}
+.price__from b{display:block;font-family:var(--f-display);font-weight:700;font-size:clamp(30px,2.6vw,40px);letter-spacing:-.03em;line-height:1;color:var(--c-white);margin-top:4px}
+.price__from b small{font-family:var(--f-body);font-size:13px;font-weight:400;letter-spacing:0;color:var(--c-text);margin-left:6px}
+.ladder{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.ladder li{padding:8px 10px;border-radius:12px;border:1px solid var(--c-line);font-size:12px;color:var(--c-text);line-height:1.35}
+.ladder li b{display:block;font-size:14px;font-weight:600;color:var(--c-white)}
+.price__group{font-size:12.5px;color:var(--c-text)}
+.price__group b{color:var(--c-white);font-weight:500}
+.card__foot--price{flex-direction:column;align-items:stretch}
+.card__foot--price .pill{align-self:flex-start}
+
+/* =====================================================================
+   v2 — SOLO TRAVELLERS
+   ===================================================================== */
+.solo{max-width:1180px;margin:clamp(48px,5vw,80px) auto 0;padding:clamp(26px,3vw,44px);border-radius:var(--r-card);border:1px solid var(--c-line);
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(24px,4vw,64px);align-items:start}
+.solo h3{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(34px,3.4vw,56px);letter-spacing:-.04em;line-height:.95}
+.solo p{margin-top:14px;font-size:15px;color:var(--c-text);font-weight:300;max-width:44ch}
+.solo__rates{border-top:1px solid var(--c-line)}
+.solo__rate{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;border-bottom:1px solid var(--c-line)}
+.solo__rate span{font-size:15px}
+.solo__rate span small{display:block;font-size:12.5px;color:var(--c-text);margin-top:2px}
+.solo__rate b{font-family:var(--f-display);font-weight:600;font-size:clamp(20px,1.8vw,26px);letter-spacing:-.02em;text-align:right;white-space:nowrap}
+.solo__rate b.is-request{font-family:var(--f-body);font-size:13px;font-weight:500;color:var(--c-accent)}
+.solo .pill{margin-top:22px}
+@media(max-width:900px){.solo{grid-template-columns:1fr}}
+
+/* booking summary — per-guest emphasis */
+.sum-price{margin-top:6px;padding:16px 0 4px}
+.sum-price__each{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,3vw,46px);letter-spacing:-.03em;line-height:1}
+.sum-price__each small{font-family:var(--f-body);font-size:13px;font-weight:400;color:var(--c-text);letter-spacing:0;margin-left:6px}
+.sum-price__total{margin-top:8px;font-size:13px;color:var(--c-text)}
+.sum-price__total b{color:var(--c-white);font-weight:500}
+.choice label .soon,.soon{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;border:1px solid var(--c-accent);color:var(--c-accent);font-size:11px;font-weight:500;letter-spacing:.04em;vertical-align:middle;font-family:var(--f-body);text-transform:none}
+
+/* =====================================================================
+   v2 — CANCELLATION, REFUND & RESCHEDULING POLICY
+   ===================================================================== */
+.policy{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.policy__item{padding:clamp(22px,2.4vw,34px);border-radius:var(--r-card);border:1px solid var(--c-line)}
+.policy__item h3{font-family:var(--f-display);font-weight:600;text-transform:uppercase;font-size:clamp(22px,2vw,30px);letter-spacing:-.02em;margin-bottom:14px}
+.policy__item ul{display:grid;gap:10px;font-size:15px;color:var(--c-text);font-weight:300}
+.policy__item li{position:relative;padding-left:16px}
+.policy__item li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--c-accent)}
+.policy__item li strong{color:var(--c-white);font-weight:500}
+.policy__item--lead{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:rgba(180,255,64,.06);border-color:rgba(180,255,64,.45)}
+.policy__item--lead p{font-size:clamp(17px,1.4vw,21px);font-weight:300;max-width:60ch}
+.policy__item--lead b{font-family:var(--f-display);font-weight:700;text-transform:uppercase;font-size:clamp(28px,2.6vw,40px);letter-spacing:-.03em;color:var(--c-accent);white-space:nowrap}
+[data-theme="light"] .policy__item--lead b{color:var(--c-accent-ink,#3d6b00)}
+[data-theme="light"] .solo__rate b.is-request,[data-theme="light"] .soon{color:var(--c-accent-ink);border-color:var(--c-accent-ink)}
+@media(max-width:760px){.policy{grid-template-columns:1fr}.ladder{grid-template-columns:1fr 1fr 1fr}}
 </style>
 </head>
 <body>
@@ -616,9 +685,9 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
 <section class="hero" id="home" aria-labelledby="heroTitle">
   <span class="eyebrow" data-fade>Private cultural experiences — Abu Dhabi</span>
   <h1 class="display hero__title" id="heroTitle">
-    <span class="line"><span class="line__in">Discover Abu Dhabi</span></span>
-    <span class="line"><span class="line__in">through a different</span></span>
-    <span class="line"><span class="line__in">perspective.</span></span>
+    <span class="line"><span class="line__in">Abu Dhabi,</span></span>
+    <span class="line"><span class="line__in">personally hosted</span></span>
+    <span class="line"><span class="line__in">by Hasher.</span></span>
   </h1>
   <p class="lead hero__intro" data-fade>Explore Abu Dhabi’s culture, landmarks and stories with <strong>Hasher Maktoum, your personal private tour guide.</strong></p>
   <div class="hero__cta" data-fade>
@@ -678,51 +747,97 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
       <span class="section-index" data-fade>02 — Private cultural outings</span>
       <h2 class="display h-lg" id="expTitle"><span class="line"><span class="line__in">Your stay.</span></span><span class="line"><span class="line__in">Your experience.</span></span></h2>
     </div>
-    <p class="lead" data-fade>Choose one, two or three personally hosted cultural outings across your Abu Dhabi stay. Prices are <strong>per private group of 1–4 guests</strong>, not per person or destination. After-tour activities are extra.</p>
+    <p class="lead" data-fade>Choose one, two or three personally hosted cultural outings across your Abu Dhabi stay. Prices are <strong>per private group of 2–4 guests</strong>, not per person or destination. After-tour activities are extra.</p>
+  </div>
+  <div class="cur-row" data-fade>
+    <div class="cur" role="group" aria-label="Display currency" data-cur-switch><span class="cur__label">Show prices in</span></div>
+    <p class="cur-note" data-cur-note></p>
   </div>
   <div class="grid">
     <article class="card" data-fade>
       <a href="#booking" class="card__media media" data-zoom data-book="one" data-cursor="Book" aria-label="Select Private Cultural Introduction">
-        <img src="./hasher-with-guest-mosque.webp" alt="Private cultural visit at Sheikh Zayed Grand Mosque in Abu Dhabi" loading="lazy" decoding="async">
+        <img src="./exp-card-introduction.jpg" alt="Hasher Maktoum at Sheikh Zayed Grand Mosque, Abu Dhabi" loading="lazy" decoding="async">
       </a>
       <h3 class="card__title">Private Cultural Introduction</h3>
-      <p class="card__meta">One outing <span>Privately hosted · 1–4 guests</span></p>
+      <p class="card__meta">One outing <span>Privately hosted · 2–4 guests</span></p>
       <p class="card__desc">A personally hosted introduction to Abu Dhabi’s culture. Discuss your preferred destination with Hasher.</p>
       <ul class="card__list"><li>One private cultural outing</li><li>Dates and destination agreed individually</li><li>Optional activities quoted separately</li></ul>
-      <div class="card__foot"><span class="card__price"><b>AED 3,500 / group</b></span><a class="pill" href="#booking" data-scroll data-book="one">Select package</a></div>
+      <div class="card__foot card__foot--price">
+        <div class="price" data-price="3500">
+          <p class="price__from">From<b data-money="3500" data-div="4">—</b></p>
+          <ul class="ladder" aria-label="Price per guest by group size">
+            <li>2 guests<b data-money="3500" data-div="2">—</b>each</li>
+            <li>3 guests<b data-money="3500" data-div="3">—</b>each</li>
+            <li>4 guests<b data-money="3500" data-div="4">—</b>each</li>
+          </ul>
+          <p class="price__group">One price for your private group: <b data-money="3500">AED 3,500</b></p>
+        </div>
+        <a class="pill" href="#booking" data-scroll data-book="one">Select package</a></div>
     </article>
     <article class="card" data-fade>
       <a href="#booking" class="card__media media" data-zoom data-book="two" data-cursor="Book" aria-label="Select Abu Dhabi Across Your Stay">
-        <img src="./sheikh-zayed-grand-mosque-interior.webp" alt="Inside Sheikh Zayed Grand Mosque, Abu Dhabi" loading="lazy" decoding="async">
+        <img src="./exp-card-across-stay.jpg" alt="Hasher Maktoum walking through the arcades of Sheikh Zayed Grand Mosque" loading="lazy" decoding="async">
       </a>
       <h3 class="card__title">Abu Dhabi Across Your Stay</h3>
-      <p class="card__meta">Two outings <span>On separate days · 1–4 guests</span></p>
+      <p class="card__meta">Two outings <span>On separate days · 2–4 guests</span></p>
       <p class="card__desc">Two personal cultural outings on separate days, planned around your visit to the capital.</p>
       <ul class="card__list"><li>Two outings during your stay</li><li>Preferred sites and dates discussed with Hasher</li><li>Extra activities quoted separately</li></ul>
-      <div class="card__foot"><span class="card__price"><b>AED 6,800 / group</b></span><a class="pill" href="#booking" data-scroll data-book="two">Select package</a></div>
+      <div class="card__foot card__foot--price">
+        <div class="price" data-price="6800">
+          <p class="price__from">From<b data-money="6800" data-div="4">—</b></p>
+          <ul class="ladder" aria-label="Price per guest by group size">
+            <li>2 guests<b data-money="6800" data-div="2">—</b>each</li>
+            <li>3 guests<b data-money="6800" data-div="3">—</b>each</li>
+            <li>4 guests<b data-money="6800" data-div="4">—</b>each</li>
+          </ul>
+          <p class="price__group">One price for your private group: <b data-money="6800">AED 6,800</b></p>
+        </div>
+        <a class="pill" href="#booking" data-scroll data-book="two">Select package</a></div>
     </article>
     <article class="card" data-fade>
       <a href="#booking" class="card__media media" data-zoom data-book="three" data-cursor="Book" aria-label="Select Signature Abu Dhabi Stay">
-        <img src="./mosque-grand-arches.webp" alt="Arches and columns at Sheikh Zayed Grand Mosque" loading="lazy" decoding="async">
+        <img src="./exp-card-signature.jpg" alt="Courtyard arcades and domes of Sheikh Zayed Grand Mosque" loading="lazy" decoding="async">
       </a>
       <h3 class="card__title">Signature Abu Dhabi Stay</h3>
-      <p class="card__meta">Three outings <span>Across your stay · 1–4 guests</span></p>
+      <p class="card__meta">Three outings <span>Across your stay · 2–4 guests</span></p>
       <p class="card__desc">Three tailored cultural outings across your Abu Dhabi stay, with arrangements discussed individually.</p>
       <ul class="card__list"><li>Three personally hosted outings</li><li>Visits arranged across your stay</li><li>After-tour activities not included</li></ul>
-      <div class="card__foot"><span class="card__price"><b>AED 9,900 / group</b></span><a class="pill" href="#booking" data-scroll data-book="three">Select package</a></div>
+      <div class="card__foot card__foot--price">
+        <div class="price" data-price="9900">
+          <p class="price__from">From<b data-money="9900" data-div="4">—</b></p>
+          <ul class="ladder" aria-label="Price per guest by group size">
+            <li>2 guests<b data-money="9900" data-div="2">—</b>each</li>
+            <li>3 guests<b data-money="9900" data-div="3">—</b>each</li>
+            <li>4 guests<b data-money="9900" data-div="4">—</b>each</li>
+          </ul>
+          <p class="price__group">One price for your private group: <b data-money="9900">AED 9,900</b></p>
+        </div>
+        <a class="pill" href="#booking" data-scroll data-book="three">Select package</a></div>
     </article>
     <article class="card" data-fade>
       <a href="#booking" class="card__media media" data-zoom data-book="quote" data-cursor="Enquire" aria-label="Request private quotation for three outings and after-tour activities">
-        <img src="./hasher-private-cultural-guiding.webp" alt="Emirati host accompanying a private visitor at Sheikh Zayed Grand Mosque" loading="lazy" decoding="async">
+        <img src="./exp-card-activities.jpg" alt="Hasher Maktoum walking along the marble arcade at Sheikh Zayed Grand Mosque" loading="lazy" decoding="async">
       </a>
       <h3 class="card__title">Three Outings + After-Tour Activities</h3>
-      <p class="card__meta">Custom experience <span>Private quotation</span></p>
+      <p class="card__meta">Custom experience <span class="soon">Coming soon</span></p>
       <p class="card__desc">Combine a three-outing cultural stay with additional activities. Hasher will prepare a personal quotation for the full experience.</p>
       <ul class="card__list"><li>Three private outings</li><li>After-tour activities arranged on request</li><li>Quoted before any booking is confirmed</li></ul>
       <div class="card__foot"><span class="card__price">Private quotation</span><a class="pill pill--ghost" href="#booking" data-scroll data-book="quote">Request a quote</a></div>
     </article>
   </div>
-  <p class="lead" style="max-width:1180px;margin:48px auto 0;font-size:14px" data-fade>For example, a group of four sharing the AED 3,500 Private Cultural Introduction would pay the equivalent of AED 875 each. The price is billed per group. Admission, transportation, VAT treatment and specific inclusions must be confirmed with Hasher before launch. Outings may be on separate days; no fixed tour durations are advertised.</p>
+  <div class="solo" id="solo" data-fade>
+    <div>
+      <h3>Solo<br>travellers</h3>
+      <p>Prices for solo travellers.</p>
+      <a class="pill" href="#booking" data-scroll data-solo>Select package</a>
+    </div>
+    <div class="solo__rates" aria-label="Solo traveller rates">
+      <div class="solo__rate"><span>One outing<small>Private Cultural Introduction</small></span><b data-solo-rate="one">—</b></div>
+      <div class="solo__rate"><span>Two outings<small>On separate days</small></span><b data-solo-rate="two">—</b></div>
+      <div class="solo__rate"><span>Three outings<small>Across your stay</small></span><b data-solo-rate="three">—</b></div>
+    </div>
+  </div>
+  <p class="lead" style="max-width:1180px;margin:48px auto 0;font-size:14px" data-fade>For example, a group of four sharing the <span data-money="3500">AED 3,500</span> Private Cultural Introduction would pay the equivalent of <span data-money="3500" data-div="4">AED 875</span> each. The price is billed per group. Admission tickets are paid by Hasher. For transport, there is a pick-up option, or you can meet Hasher at the destination. Outings may be on separate days; no fixed tour durations are advertised.</p>
 </section>
 
 <!-- =================== 05 DISCOVER ABU DHABI — THREE LAUNCH DESTINATIONS =================== -->
@@ -737,13 +852,13 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
   <div class="dest">
     <article class="dest__item" data-fade data-cursor="Explore">
       <div class="media" data-parallax>
-        <img src="./hasher-with-guest-mosque.webp" alt="Hasher Maktoum guiding a visitor at Sheikh Zayed Grand Mosque, Abu Dhabi" loading="lazy" decoding="async">
+        <img src="./founders-memorial.jpg" alt="The Founder’s Memorial, Abu Dhabi" loading="lazy" decoding="async">
       </div>
       <div class="dest__body"><div><span class="dest__num">01</span><h3 class="display">The Founder’s<br>Memorial</h3></div>
-      <p>A place dedicated to the life, values and legacy of Sheikh Zayed bin Sultan Al Nahyan, the founding father of the UAE. <span class="dest__photo-note">Photo: Hasher with a guest at Sheikh Zayed Grand Mosque. Founder’s Memorial photo to follow.</span></p></div>
+      <p>A place dedicated to the life, values and legacy of Sheikh Zayed bin Sultan Al Nahyan, the founding father of the UAE.</p></div>
     </article>
     <article class="dest__item" data-fade data-cursor="Explore">
-      <div class="media" data-parallax><img src="./mosque-grand-arches.webp" alt="Sheikh Zayed Grand Mosque architecture photographed during a private visit" loading="lazy" decoding="async"></div>
+      <div class="media" data-parallax><img src="./sheikh-zayed-grand-mosque.jpg" alt="Aerial view of Sheikh Zayed Grand Mosque, Abu Dhabi" loading="lazy" decoding="async"></div>
       <div class="dest__body"><div><span class="dest__num">02</span><h3 class="display">Sheikh Zayed<br>Grand Mosque</h3></div>
       <p>Explore white marble domes, graceful arches and Islamic craftsmanship while learning about the stories behind the landmark.</p></div>
     </article>
@@ -769,7 +884,7 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
     <li class="why__row" data-fade><span class="why__n">03</span><span class="why__t">Maximum four guests</span><span class="why__d">Small enough to stay personal. Solo travellers are welcome.</span></li>
     <li class="why__row" data-fade><span class="why__n">04</span><span class="why__t">One group per day</span><span class="why__d">Your day is never shared or squeezed between other tours.</span></li>
     <li class="why__row" data-fade><span class="why__n">05</span><span class="why__t">Individual attention</span><span class="why__d">Questions, pace and stops shaped around your group.</span></li>
-    <li class="why__row" data-fade><span class="why__n">06</span><span class="why__t">Optional activities</span><span class="why__d">After-tour activities can be added by private quotation. <span class="ph">Options to confirm</span></span></li>
+    <li class="why__row" data-fade><span class="why__n">06</span><span class="why__t">Optional activities</span><span class="why__d">After-tour activities can be added by private quotation. <span class="soon">Coming soon</span></span></li>
   </ol>
 </section>
 
@@ -802,11 +917,11 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
       </div>
 
       <div class="step">
-        <div class="step__h"><h3>2. Number of outings</h3><small>Per private group · 1–4 guests</small></div>
+        <div class="step__h"><h3>2. Number of outings</h3><small id="typeHelp">Per private group · 2–4 guests</small></div>
         <div class="choices" role="radiogroup" aria-label="Number of outings">
-          <div class="choice"><input type="radio" name="type" id="t-one" value="one" checked><label for="t-one"><b>One outing</b><span>AED 3,500 / group</span></label></div>
-          <div class="choice"><input type="radio" name="type" id="t-two" value="two"><label for="t-two"><b>Two outings</b><span>AED 6,800 / group</span></label></div>
-          <div class="choice"><input type="radio" name="type" id="t-three" value="three"><label for="t-three"><b>Three outings</b><span>AED 9,900 / group</span></label></div>
+          <div class="choice"><input type="radio" name="type" id="t-one" value="one" checked><label for="t-one"><b>One outing</b><span data-choice-price="one">AED 3,500 / group</span></label></div>
+          <div class="choice"><input type="radio" name="type" id="t-two" value="two"><label for="t-two"><b>Two outings</b><span data-choice-price="two">AED 6,800 / group</span></label></div>
+          <div class="choice"><input type="radio" name="type" id="t-three" value="three"><label for="t-three"><b>Three outings</b><span data-choice-price="three">AED 9,900 / group</span></label></div>
           <div class="choice"><input type="radio" name="type" id="t-quote" value="quote"><label for="t-quote"><b>3 + activities</b><span>Private quotation</span></label></div>
         </div>
       </div>
@@ -822,7 +937,7 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
       </div>
 
       <div class="step">
-        <div class="step__h"><h3>4. Guests</h3><small>1–4 guests · one group price</small></div>
+        <div class="step__h"><h3>4. Guests</h3><small>1–4 guests</small></div>
         <div class="stepper">
           <button type="button" id="gMinus" aria-label="Fewer guests">−</button>
           <output id="gCount" aria-live="polite">2</output>
@@ -832,7 +947,7 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
       </div>
 
       <div class="step">
-        <div class="step__h"><h3>5. After-tour activities</h3><small>Additional quotation applies</small></div>
+        <div class="step__h"><h3>5. After-tour activities <span class="soon">Coming soon</span></h3><small>Additional quotation applies</small></div>
         <p class="stepper__note" style="margin-bottom:12px">Available activities and prices will be confirmed by Hasher. Describe your interests for a separate quotation.</p>
         <div class="field field--full"><label for="fActivities">Activities you would like to add (optional)</label><textarea id="fActivities" rows="3" placeholder="Tell Hasher what you would like to do after the tour"></textarea></div>
       </div>
@@ -851,21 +966,67 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
 
     <aside class="panel summary" aria-labelledby="sumTitle">
       <h3 id="sumTitle">Your private experience</h3>
+      <div class="cur" role="group" aria-label="Display currency" data-cur-switch><span class="cur__label">Currency</span></div>
       <dl>
         <div><dt>Preferred first date</dt><dd id="sDate">Choose a date</dd></div>
         <div><dt>Package</dt><dd id="sType">One outing</dd></div>
         <div><dt>Preferred destinations</dt><dd id="sDest">Sheikh Zayed Grand Mosque</dd></div>
         <div><dt>Guests</dt><dd id="sGuests">2 guests</dd></div>
         <div><dt>After-tour activities</dt><dd id="sAddons">None requested</dd></div>
-        <div><dt>Group package price</dt><dd id="sPrice">AED 3,500</dd></div>
       </dl>
+      <div class="sum-price" aria-live="polite">
+        <p class="sum-price__each" id="sEach">—</p>
+        <p class="sum-price__total" id="sTotal"></p>
+      </div>
       <div class="summary__pay">
         <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><rect x="1.5" y="3.5" width="15" height="11" rx="2" fill="none" stroke="currentColor"/><path d="M1.5 7h15" stroke="currentColor"/></svg>
-        <span>The package price is for one private group of 1–4 guests. Two or three outings are arranged on separate days. Activities cost extra. Online payment is not active; nothing is charged in this preview.</span>
+        <span>The package price is for one private group of 2–4 guests; solo travellers have separate prices. Two or three outings are arranged on separate days. Activities cost extra. Online payment is not active; nothing is charged in this preview.</span>
       </div>
       <button class="pill pill--lg" type="submit" form="bookForm" data-cursor="Book">Preview my enquiry</button>
       <p class="summary__msg" id="sMsg" role="status" aria-live="polite"></p>
     </aside>
+  </div>
+</section>
+
+<!-- =================== 06 CANCELLATION, REFUND & RESCHEDULING POLICY =================== -->
+<section class="section" id="policy" aria-labelledby="policyTitle">
+  <div class="section-head">
+    <div>
+      <span class="section-index" data-fade>Policy</span>
+      <h2 class="display h-lg" id="policyTitle"><span class="line"><span class="line__in">Cancellation, Refund</span></span><span class="line"><span class="line__in">&amp; Rescheduling Policy</span></span></h2>
+    </div>
+    <p class="lead" data-fade>We understand that travel plans can change. We aim to provide complete flexibility and peace of mind when booking your private experience.</p>
+  </div>
+  <div class="policy">
+    <div class="policy__item" data-fade>
+      <h3>Cancellations</h3>
+      <ul>
+        <li>Guests may cancel their booking at any time before the experience begins.</li>
+        <li>All cancellations are eligible for a 100% refund, regardless of notice.</li>
+        <li>No cancellation penalties or deductions will be applied.</li>
+      </ul>
+    </div>
+    <div class="policy__item" data-fade>
+      <h3>Multiple-outing packages</h3>
+      <ul>
+        <li>If a guest cancels before their first outing, the entire package is fully refundable.</li>
+        <li>If a package has already begun, any remaining, uncompleted outings will be refunded. Completed outings are not refundable.</li>
+      </ul>
+    </div>
+    <div class="policy__item" data-fade>
+      <h3>Rescheduling</h3>
+      <ul>
+        <li>Guests may request a date change at no additional charge.</li>
+        <li>Rescheduling is subject to availability and mutual agreement.</li>
+      </ul>
+    </div>
+    <div class="policy__item" data-fade>
+      <h3>Refund processing</h3>
+      <ul>
+        <li>Approved refunds will be initiated within seven business days.</li>
+        <li>Refunds will be returned through the original payment method where possible.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -906,7 +1067,7 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
     </div>
     <div class="faq__list" id="faqList">
       <div class="faq__item"><button class="faq__q" aria-expanded="false">How are the packages priced?<span class="faq__icon" aria-hidden="true"></span></button>
-        <div class="faq__a"><div><p>Prices are for your entire private group of one to four guests: AED 3,500 for one outing, AED 6,800 for two outings and AED 9,900 for three outings. They are not per-person or per-destination prices.</p></div></div></div>
+        <div class="faq__a"><div><p>Prices are for your entire private group of two to four guests: <span data-money="3500">AED 3,500</span> for one outing, <span data-money="6800">AED 6,800</span> for two outings and <span data-money="9900">AED 9,900</span> for three outings. They are not per-person or per-destination prices. Solo travellers have separate prices.</p></div></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false">Which cultural sites can I visit?<span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div><p>At launch, the options are The Founder’s Memorial, Sheikh Zayed Grand Mosque and Qasr Al Watan. Your preferred destinations are discussed with Hasher before confirmation.</p></div></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false">Do two or three outings happen on one day?<span class="faq__icon" aria-hidden="true"></span></button>
@@ -914,11 +1075,11 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
       <div class="faq__item"><button class="faq__q" aria-expanded="false">Are tour times fixed?<span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div><p>No fixed tour duration is advertised. Visit arrangements are agreed directly with Hasher.</p></div></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false">Can I add activities after my tour?<span class="faq__icon" aria-hidden="true"></span></button>
-        <div class="faq__a"><div><p>Yes, after-tour activities are separate from the published group package rates. A three-outing stay plus activities is available on private quotation; activity options and costs will be confirmed individually.</p></div></div></div>
+        <div class="faq__a"><div><p>After-tour activities are coming soon.</p></div></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false">Can I book and pay through this website now?<span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div><p>Not yet. The current booking screen is a preview and does not send a request, reserve dates or collect payment. Contact and payment arrangements will be confirmed before launch.</p></div></div></div>
       <div class="faq__item"><button class="faq__q" aria-expanded="false">What is included in the group price?<span class="faq__icon" aria-hidden="true"></span></button>
-        <div class="faq__a"><div><p>Private guiding is the basis of the experience. Confirm admission, transport, taxes, and any other inclusions with Hasher before making payment. After-tour activities are additional.</p></div></div></div>
+        <div class="faq__a"><div><p>Private guiding is the basis of the experience. Admission tickets are paid by Hasher. For transport, there is a pick-up option, or you can meet Hasher at the destination. After-tour activities are coming soon.</p></div></div></div>
     </div>
   </div>
 </section>
@@ -926,7 +1087,7 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
 <!-- =================== 11 FINAL CTA =================== -->
 <section class="final" aria-labelledby="finalTitle">
   <div class="final__card" data-fade>
-    <div class="media" data-parallax><video src="./cta.mp4" poster="./cta-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true"></video></div>
+    <div class="media" data-parallax><video src="./cta-scenery.mp4" poster="./cta-scenery-poster.jpg" muted loop playsinline autoplay preload="metadata" aria-hidden="true" onerror="this.src='./cta.mp4';this.poster='./cta-poster.jpg'"></video></div>
     <div class="final__inner">
       <h2 class="display" id="finalTitle">Your private Abu Dhabi experience starts here.</h2>
       <a class="pill pill--lg" href="#booking" data-scroll>Book Your Private Tour
@@ -954,8 +1115,8 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
     </div>
     <div class="footer__col">
       <h4>Contact</h4>
-      <p><span class="ph">email@to-confirm</span></p>
-      <p><span class="ph">WhatsApp / phone TBC</span></p>
+      <p><a class="u-link" href="mailto:hmaldhaheri@outlook.com">hmaldhaheri@outlook.com</a></p>
+      <p><a class="u-link" href="tel:+971503131393">+971 50 313 1393</a></p>
     </div>
     <div class="footer__col">
       <h4>Explore</h4>
@@ -971,12 +1132,13 @@ html.theme-switching *,html.theme-switching *::before,html.theme-switching *::af
     <span>© <span id="year"></span> Along with Hasher Maktoum. All rights reserved.</span>
     <nav aria-label="Legal">
       <button class="u-link" type="button" data-toast="Privacy policy will be published before launch.">Privacy policy</button>
-      <button class="u-link" type="button" data-toast="Booking &amp; cancellation policy will be published once confirmed.">Booking policy</button>
+      <a class="u-link" href="#policy" data-scroll>Booking policy</a>
     </nav>
     <div class="socials" aria-label="Social media">
-      <button type="button" aria-label="Instagram (link to be added)" data-toast="Instagram link will be added once supplied."><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></button>
-      <button type="button" aria-label="TikTok (link to be added)" data-toast="TikTok link will be added once supplied."><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3v11.5a3.5 3.5 0 1 1-3-3.46M14 3c.5 2.6 2.3 4.3 5 4.5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
-      <button type="button" aria-label="WhatsApp (link to be added)" data-toast="WhatsApp link will be added once supplied."><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <!-- LinkedIn: when Hasher sends his profile URL, replace this <button …> with
+           <a href="https://www.linkedin.com/in/…" target="_blank" rel="noopener" aria-label="Hasher Maktoum on LinkedIn"> … </a> -->
+      <button type="button" aria-label="LinkedIn (profile link coming soon)" data-toast="Hasher’s LinkedIn profile link is coming soon."><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8 10.5V16M8 7.6v.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M11.5 16v-5.5M11.5 13.2c0-1.6 1-2.7 2.4-2.7s2.1.9 2.1 2.6V16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+      <a href="https://wa.me/971503131393" target="_blank" rel="noopener" aria-label="WhatsApp Hasher"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
     </div>
   </div>
 </footer>
@@ -1227,9 +1389,56 @@ document.getElementById('year').textContent = new Date().getFullYear();
   setHeroVideo();
   mobileMq.addEventListener('change', setHeroVideo);
 
+
   /* =====================================================================
      BOOKING DEMO
      ===================================================================== */
+  /* =====================================================================
+     PRICING + CURRENCY  — edit these values only
+     ===================================================================== */
+  // Group rates (AED) for a private group of 2–4 guests — from Hasher's price list.
+  const GROUP_AED = { one: 3500, two: 6800, three: 9900 };
+  // Solo-traveller rates (AED). Leave as null until Hasher confirms them;
+  // the site then shows "Rate on request". Example: { one: 2500, two: 4800, three: 6900 }
+  const SOLO_AED  = { one: null, two: null, three: null };
+  // Display currencies. AED→USD uses the fixed UAE peg (3.6725).
+  // EUR/GBP are approximate (mid-market, Nov 2026) — update occasionally.
+  const CURRENCIES = {
+    USD: { rate: 1 / 3.6725 },
+    AED: { rate: 1 },
+    EUR: { rate: 0.86 / 3.6725 },
+    GBP: { rate: 0.74 / 3.6725 }
+  };
+  const DEFAULT_CURRENCY = 'USD';
+
+  let currency = DEFAULT_CURRENCY;
+  try { const c = localStorage.getItem('tbh-currency'); if (CURRENCIES[c]) currency = c; } catch (e) {}
+  function money(aed, div = 1){
+    const v = Math.round(aed * CURRENCIES[currency].rate / div);
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency, currencyDisplay: currency === 'AED' ? 'code' : 'narrowSymbol', maximumFractionDigits: 0, minimumFractionDigits: 0 }).format(v).replace(/^AED\s?/, 'AED ');
+  }
+  function renderPrices(){
+    document.querySelectorAll('[data-money]').forEach(el => { el.textContent = money(+el.dataset.money, +(el.dataset.div || 1)); });
+    document.querySelectorAll('[data-solo-rate]').forEach(el => {
+      const v = SOLO_AED[el.dataset.soloRate];
+      el.classList.toggle('is-request', v == null);
+      el.textContent = v == null ? 'To be confirmed' : money(v);
+    });
+    document.querySelectorAll('[data-cur-note]').forEach(n => n.textContent = currency === 'AED'
+      ? 'Prices in UAE dirhams (AED).'
+      : 'Approximate conversion from AED.');
+    document.querySelectorAll('[data-cur-switch] button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.cur === currency)));
+    if (typeof renderSummary === 'function' && window.__bookingReady) renderSummary();
+  }
+  document.querySelectorAll('[data-cur-switch]').forEach(g => {
+    Object.keys(CURRENCIES).forEach(code => {
+      const b = document.createElement('button'); b.type = 'button'; b.dataset.cur = code; b.textContent = code;
+      b.addEventListener('click', () => { currency = code; try { localStorage.setItem('tbh-currency', code); } catch (e) {} renderPrices(); });
+      g.appendChild(b);
+    });
+  });
+  renderPrices();
+
   const state = { date: null, type: 'one', guests: 2, destinations: ['Sheikh Zayed Grand Mosque'] };
   const typeNames = { one: 'Private Cultural Introduction · 1 outing', two: 'Abu Dhabi Across Your Stay · 2 outings', three: 'Signature Abu Dhabi Stay · 3 outings', quote: 'Three outings + after-tour activities · private quote' };
   const packageCounts = { one: 1, two: 2, three: 3, quote: 3 }; // Number of outings, not enforced destination count
@@ -1297,9 +1506,28 @@ document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('sDest').textContent = state.destinations.length ? state.destinations.join(', ') : 'Discuss with Hasher';
     document.getElementById('sGuests').textContent = state.guests === 1 ? '1 guest (solo)' : state.guests + ' guests';
     document.getElementById('sAddons').textContent = activities.value.trim() ? 'Quote requested' : 'None requested';
-    const price = document.getElementById('sPrice');
-    price.textContent = ({one:'AED 3,500',two:'AED 6,800',three:'AED 9,900',quote:'Private quotation'})[state.type];
+    const solo = state.guests === 1;
+    // Package choices show the rate that applies to the current group size
+    document.getElementById('typeHelp').textContent = solo ? 'Solo traveller' : 'Per private group · 2–4 guests';
+    document.querySelectorAll('[data-choice-price]').forEach(el => {
+      const k = el.dataset.choicePrice;
+      if (solo) el.textContent = SOLO_AED[k] == null ? 'Solo price to be confirmed' : money(SOLO_AED[k]) + ' solo';
+      else el.textContent = money(GROUP_AED[k], state.guests) + ' each';
+    });
+    const each = document.getElementById('sEach'), total = document.getElementById('sTotal');
+    if (state.type === 'quote') { each.textContent = 'Private quotation'; total.textContent = ''; return; }
+    if (solo) {
+      const v = SOLO_AED[state.type];
+      if (v == null) { each.innerHTML = 'Solo price <small>to be confirmed</small>'; total.textContent = ''; }
+      else { each.innerHTML = money(v) + ' <small>solo</small>'; total.textContent = ''; }
+      return;
+    }
+    const g = GROUP_AED[state.type];
+    each.innerHTML = money(g, state.guests) + ' <small>per guest</small>';
+    total.innerHTML = 'Group of ' + state.guests + ' · <b>' + money(g) + '</b> in total';
   }
+  window.__bookingReady = true;
+  document.querySelectorAll('[data-solo]').forEach(a => a.addEventListener('click', () => { state.guests = 1; renderGuests(); renderSummary(); }));
 
   const msg = document.getElementById('sMsg');
   document.getElementById('bookForm').addEventListener('submit', e => {
